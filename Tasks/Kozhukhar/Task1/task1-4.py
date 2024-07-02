@@ -1,5 +1,6 @@
-rate = 3.2
-usd = float(input("Please enter the amount in USD: "))
+import decimal
+
+rate = decimal.Decimal("3.20")
 
 
 def convert(usd, rate):
@@ -7,4 +8,9 @@ def convert(usd, rate):
     return usd * rate
 
 
-print(f"{usd} USD is equal to {convert(usd, rate):.2f} BYN")
+try:
+    usd = decimal.Decimal(input("Please enter the amount in USD: "))
+    byn = convert(usd, rate)
+    print(f"{usd} USD is equal to {byn:.2f} BYN")
+except decimal.InvalidOperation:
+    print("Invalid input. Please enter a valid number.")
