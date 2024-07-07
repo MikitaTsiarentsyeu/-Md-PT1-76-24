@@ -1,6 +1,7 @@
 from num2words import num2words
 
 # устанавливаем библтотеку в powershell или командной строке pip install num2words
+# что-то не так пошло с гитом.. пробую еще раз
 
 # Словарь для часов
 hour_dict = {
