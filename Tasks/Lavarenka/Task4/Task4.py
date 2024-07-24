@@ -19,7 +19,7 @@ import os
 if os.name == 'posix':
     way = '/home/arty/PycharmProjects/-Md-PT1-76-24/Tasks/!!!Tasks/Task4/text.txt'
 elif os.name == 'nt':
-    pass
+    way = r'F:\python\repository\-Md-PT1-76-24\Tasks\!!!Tasks\Task4\text.txt'
 
 list_text = []
 
