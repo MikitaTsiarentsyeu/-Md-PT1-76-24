@@ -19,4 +19,4 @@ def length_str(input_list: list[str]) -> list[str]:
     return res
 
 
-print(length_str(['python', 'a',1, 'only', 'function', 'list']))
+print(length_str(['python', 'a', 'only', 'function', 'list']))

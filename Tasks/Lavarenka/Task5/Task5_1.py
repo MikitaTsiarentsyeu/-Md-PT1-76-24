@@ -8,7 +8,7 @@ def sum_numbers(a: int, b: int) -> int:
     the function returns the sum of numbers
     """
     if isinstance(a, int) and isinstance(b, int):
-        return a + b
+        return f"summ {a} and {b} = {a+b}"
     return 'Wrong format'
 
 

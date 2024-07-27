@@ -15,4 +15,4 @@ def reverse_str(input_list: list[str]) -> list[str]:
     return res
 
 
-print(reverse_str([1, 'abc', 'abc', 'abc', 'afg', 'arg']))
+print(reverse_str([1, 'abc', 'qwerty', 'abc', 'afg', 'arg']))
