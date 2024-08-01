@@ -1,0 +1,4 @@
+WARNING: some warning
+ERROR: some error
+WARNING: some warning
+ERROR: some error
