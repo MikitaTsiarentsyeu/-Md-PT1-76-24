@@ -1,7 +1,7 @@
-#Uppercase
+#Uppercase/
 textUp = input("Enter text: ")
 print(textUp.upper())
 
-#Lowercase
+#Lowercase/
 textLow = input("Enter text: ")
 print(textLow.lower())

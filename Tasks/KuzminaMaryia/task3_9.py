@@ -6,4 +6,5 @@ def revers1(variable):
 
 my_list_input = revers1(input("Enter text: "))
 
+
 print(my_list_input)
