@@ -1,7 +1,9 @@
 from num2words import num2words #установка через консоль, команда 'pip install num2words'
 
+
 V1_com = "incorrect format of inputted value, please try again"
 V2_com = "incorrect format of inputted value, please try again"
+
 
 MiN = {
     0 : ["двенадцатого"],
@@ -19,6 +21,7 @@ MiN = {
     12 : ["двенадцатого"]
 }
 
+
 hours = {
     0 : ["двенадцать"],
     1 : ["один"],
@@ -34,6 +37,7 @@ hours = {
     11 : ["одиннадцать"],
     12 : ["двенадцать"]
 }
+
 
 while True:
     write_user = input ("Enter the time in the data in hh:mm format:")
@@ -53,9 +57,11 @@ while True:
         continue
     break
 
+
 min = num2words(minutka, lang="ru")
 min_g = 60 - minutka
 min_end = num2words(min_g, lang="ru")
+
 
 def times (hour, minutka):
     if minutka == 0:
@@ -71,5 +77,6 @@ def times (hour, minutka):
     elif  minutka >= 45:
         hp_str = hours [(hour % 12) + 1]
         return (f"без {min_end} минут {hp_str[0]}")
-    
+
+
 print(times(hour, minutka))
