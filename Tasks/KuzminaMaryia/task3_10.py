@@ -6,6 +6,7 @@ def t_or_f (num):
         if num % i == 0: return False
     return True
 
+
 def large(num_c):
     max_ = None
     for num in num_c:
@@ -13,8 +14,10 @@ def large(num_c):
                 if max_ is None or num > max_: max_ = num
     return max_
 
+
 list_input = input("Enter list numbers: ")
 num_c = list(map(int, list_input.split()))
 res = large(num_c)
+
 
 print(res)
