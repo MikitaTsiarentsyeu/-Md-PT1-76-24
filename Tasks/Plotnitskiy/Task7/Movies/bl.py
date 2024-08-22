@@ -1,6 +1,5 @@
 import os
 
-
 movies = [
     {
         "title": "Spider-Man: No Way Home",
