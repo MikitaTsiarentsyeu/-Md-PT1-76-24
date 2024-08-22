@@ -38,4 +38,4 @@ with open ("new_text.txt", "w") as text_read:
     text_read.write("\n".join(new_text_txt))
 
 
-print("gotovo")
+print("gotovo!")
