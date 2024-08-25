@@ -1,20 +1,31 @@
 [
     {
-        "Movie Title": "Arty",
-        "Movie Director": "adaw",
-        "Movie Year": "2022",
+        "Movie Title": "Khong Khaek",
+        "Movie Director": "Kriangkrai Monwichit",
+        "Movie Year": "2023",
         "Genre": [
-            "saf",
-            "sf"
+            "Horror",
+            "Foreign"
         ]
     },
     {
-        "Movie Title": "arty",
-        "Movie Director": "fghj",
-        "Movie Year": "2000",
+        "Movie Title": "Aladdin",
+        "Movie Director": "Guy Ritchie",
+        "Movie Year": "2019",
         "Genre": [
-            "erty",
-            "rt"
+            "Adventure",
+            "Fantasy",
+            "Family"
+        ]
+    },
+    {
+        "Movie Title": "Jurassic Park",
+        "Movie Director": "Steven Spielberg",
+        "Movie Year": "1993",
+        "Genre": [
+            "Fantasy",
+            "Adventure",
+            "Family"
         ]
     }
 ]
