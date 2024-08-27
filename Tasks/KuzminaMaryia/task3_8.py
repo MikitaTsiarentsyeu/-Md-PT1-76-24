@@ -5,4 +5,5 @@ num_rr = sum(int(e) for e in num_r.split())
 
 x = int(num_rr / summ)
 
+
 print(x)
