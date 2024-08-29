@@ -1,0 +1,31 @@
+[
+    {
+        "Movie Title": "Khong Khaek",
+        "Movie Director": "Kriangkrai Monwichit",
+        "Movie Year": "2023",
+        "Genre": [
+            "Horror",
+            "Foreign"
+        ]
+    },
+    {
+        "Movie Title": "Aladdin",
+        "Movie Director": "Guy Ritchie",
+        "Movie Year": "2019",
+        "Genre": [
+            "Adventure",
+            "Fantasy",
+            "Family"
+        ]
+    },
+    {
+        "Movie Title": "Jurassic Park",
+        "Movie Director": "Steven Spielberg",
+        "Movie Year": "1993",
+        "Genre": [
+            "Fantasy",
+            "Adventure",
+            "Family"
+        ]
+    }
+]
