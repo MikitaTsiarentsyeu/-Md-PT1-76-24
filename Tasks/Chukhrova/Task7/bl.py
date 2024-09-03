@@ -1,5 +1,5 @@
 import json
-import math
+
 
 CATS_BD = "cats.json"
 cats_attr = ["name", "breed", "age", "size"]
@@ -11,6 +11,8 @@ def get_all():
             cats_from_json = json.load(f)
             all_cats = ""
             for cat in cats_from_json:
+                if cat["age"] == "null":
+                    cat["age"] = "-"
                 all_cats = f'{all_cats} {cat_to_str(cat)}\n'
             return all_cats.rstrip()
     except FileNotFoundError:
@@ -23,6 +25,8 @@ def get(breed):
             cats_from_json = json.load(f)
             for cat in cats_from_json:
                 if cat["breed"].lower() == breed.lower():
+                    if cat["age"] == "null":
+                        cat["age"] = "-"
                     return cat_to_str(cat)
     except FileNotFoundError:
         return ""
@@ -37,7 +41,7 @@ def add(**cat):
     except FileNotFoundError:
         l = []
     if not cat["age"].isdigit():
-        cat["age"] = math.nan
+        cat["age"] = "null"
     l.append(cat)
     with open(CATS_BD, 'w', encoding='utf-8') as f:
         json.dump(l, f)
