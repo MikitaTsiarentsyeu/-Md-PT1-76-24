@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+        <h3>All posts:</h3>
+        {% for post_obj in posts_obj %}
+            <div class="post">
+                <a href="{% url 'post_page' post_obj.id %}">
+                    <p>{{post_obj.title}}</p>
+                </a>
+                {% if post_obj.image %}
+                    <img src="{{post_obj.image.url}}" width="60%">
+                {% else %}
+                    <p>[NO IMAGE]</p>
+                {% endif %}
+            </div>
+        {% endfor %}
+
+{% endblock %}
