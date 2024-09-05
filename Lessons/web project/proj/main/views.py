@@ -1,7 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 import datetime
 from .models import Author, Post
 from django.http import HttpResponse, HttpResponseNotFound
+from .forms import AddPostForm, AddPostModelForm
 
 # Create your views here.
 def test(request):
@@ -24,5 +25,47 @@ def post_page(request, post_id):
         return HttpResponseNotFound(f"the post with id {post_id} does not exist")
     return render(request, 'post_page.html', {'post_obj':p})
 
+
+# def add_post_page(request):
+
+#     if request.method == 'POST':
+#         form = AddPostForm(request.POST, request.FILES)
+
+#         if form.is_valid():
+#             post_entry = Post()
+#             post_entry.author = Author.objects.all()[0] #temporary solution
+#             post_entry.issued = datetime.datetime.now()
+#             post_entry.title = form.cleaned_data['title']
+#             post_entry.content = form.cleaned_data['content']
+#             post_entry.post_type = form.cleaned_data['post_type']
+#             post_entry.image = form.cleaned_data['image']
+#             post_entry.save()
+
+#             return redirect('post_page', post_entry.id)
+
+#     else:
+#         form = AddPostForm()
+
+#     return render(request, 'add_post_page.html', {'form':form})
+
+
 def add_post_page(request):
-    return HttpResponse("<h1>add post page</h1>")
+
+    if request.method == 'POST':
+        form = AddPostModelForm(request.POST, request.FILES)
+
+        if form.is_valid():
+            post_entry = form.save(commit=False)
+            post_entry.author = Author.objects.all()[0] #temporary solution
+            post_entry.issued = datetime.datetime.now()
+
+            # post_entry.save()
+            form.save()
+            form.save_m2m()
+
+            return redirect('post_page', post_entry.id)
+
+    else:
+        form = AddPostModelForm()
+
+    return render(request, 'add_post_page.html', {'form':form})

@@ -10,8 +10,9 @@ class Author(models.Model):
 class Post(models.Model):
 
     POST_TYPES = [('c', "copyright"), ('p', "public")]
+    TITLE_MAX_LENGTH = 250
 
-    title = models.CharField(max_length=250)
+    title = models.CharField(max_length=TITLE_MAX_LENGTH)
     content = models.TextField()
     post_type = models.CharField(max_length=1, choices=POST_TYPES)
     issued = models.DateTimeField()
