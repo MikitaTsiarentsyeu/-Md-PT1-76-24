@@ -16,9 +16,33 @@
                     Blog Project
                 </h1>
             </a>
+            <div style="display: flex;justify-content: space-between;">
+                {% if user.is_authenticated %}
+                    <p>Hello, {{ user.get_username }}</p>
+                    <!-- <a href="{% url 'logout' %}?next={{request.path}}">
+                        logout
+                    </a> -->
+                    {% if perms.main.add_post %}
+                        <form action="{% url 'add_post_page' %}" method="get">
+                            {% csrf_token %}
+                            <input type="submit" value="add post"/>
+                        </form>
+                    {% endif %}
+                    <form action="{% url 'logout' %}?next={{request.path}}" method="post">
+                        {% csrf_token %}
+                        <input type="submit" value="logout"/>
+                    </form>
+                {% else %}
+                    <form action="{% url 'login' %}?next={{request.path}}" method="post">
+                        {% csrf_token %}
+                        <input type="submit" value="login"/>
+                    </form>
+                {% endif %}
+        
+              </div>
         </div>
         
-
+        
     </header>
     <div class="container">
       <div class="column">

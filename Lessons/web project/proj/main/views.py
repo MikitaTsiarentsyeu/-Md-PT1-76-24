@@ -3,6 +3,7 @@ import datetime
 from .models import Author, Post
 from django.http import HttpResponse, HttpResponseNotFound
 from .forms import AddPostForm, AddPostModelForm
+from django.contrib.auth.decorators import permission_required
 
 # Create your views here.
 def test(request):
@@ -16,11 +17,16 @@ def test_url(request, test_param):
 
 def posts_page(request):
     posts = Post.objects.all()
-    return render(request, 'posts_page.html', {'posts_obj':posts})
+    vp = request.session.get('vp', [])
+    return render(request, 'posts_page.html', {'posts_obj':posts, 'vp': vp})
 
 def post_page(request, post_id):
     try:
         p = Post.objects.get(id=post_id)
+        vp = request.session.get('vp', [])
+        if p.id not in vp:
+            vp.append(p.id)
+        request.session['vp'] = vp
     except:
         return HttpResponseNotFound(f"the post with id {post_id} does not exist")
     return render(request, 'post_page.html', {'post_obj':p})
@@ -48,7 +54,7 @@ def post_page(request, post_id):
 
 #     return render(request, 'add_post_page.html', {'form':form})
 
-
+@permission_required("main.add_post")
 def add_post_page(request):
 
     if request.method == 'POST':
@@ -56,7 +62,7 @@ def add_post_page(request):
 
         if form.is_valid():
             post_entry = form.save(commit=False)
-            post_entry.author = Author.objects.all()[0] #temporary solution
+            post_entry.author = Author.objects.get(email=request.user.email)
             post_entry.issued = datetime.datetime.now()
 
             # post_entry.save()
