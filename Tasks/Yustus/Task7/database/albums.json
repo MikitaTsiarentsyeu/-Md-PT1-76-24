@@ -1,0 +1,83 @@
+[
+{
+  "title": "Abbey Road",
+  "artist": "The Beatles",
+  "year": 1969,
+  "genre": [
+    "Rock"
+  ]
+},
+{
+  "title": "Back in Black",
+  "artist": "AC/DC",
+  "year": 1980,
+  "genre": [
+    "Hard Rock",
+    "Heavy Metal"
+  ]
+},
+{
+  "title": "The Bodyguard",
+  "artist": "Whitney Houston",
+  "year": 1992,
+  "genre": [
+    "R&B",
+    "Pop",
+    "Soundtrack"
+  ]
+},
+{
+  "title": "Rumours",
+  "artist": "Fleetwood Mac",
+  "year": 1977,
+  "genre": [
+    "Rock",
+    "Pop Rock"
+  ]
+},
+{
+  "title": "The Wall",
+  "artist": "Pink Floyd",
+  "year": 1979,
+  "genre": [
+    "Progressive Rock",
+    "Opera Rock"
+  ]
+},
+{
+  "title": "Metallica",
+  "artist": "Metallica",
+  "year": 1991,
+  "genre": [
+    "Heavy Metal",
+    "Thrash Metal"
+  ]
+},
+{
+  "title": "Jagged Little Pill",
+  "artist": "Alanis Morissette",
+  "year": 1995,
+  "genre": [
+    "Alternative Rock",
+    "Pop Rock"
+  ]
+},
+{
+  "title": "Nevermind",
+  "artist": "Nirvana",
+  "year": 1991,
+  "genre": [
+    "Grunge",
+    "Alternative Rock"
+  ]
+},
+{
+  "title": "Born in the U.S.A.",
+  "artist": "Bruce Springsteen",
+  "year": 1984,
+  "genre": [
+    "Rock",
+    "Heartland Rock"
+  ]
+}
+]
