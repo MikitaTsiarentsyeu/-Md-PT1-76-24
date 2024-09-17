@@ -21,13 +21,12 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path('posts/', main_views.posts_page, name="posts_page"),
-    path('posts/<int:post_id>/', main_views.post_page, name="post_page"),
-    path('posts/add/', main_views.add_post_page, name="add_post_page"),
-    path('test/<str:test_param>/', main_views.test_url),
-    path('test/<int:test_param>/', main_views.test_url),
+    path('posts/', main_views.PostsView.as_view(), name="posts_page"),
+    path('posts/<int:post_id>/', main_views.PostView.as_view(), name="post_page"),
+    path('posts/add/', main_views.AddPostView.as_view(), name="add_post_page"),
+    # path('test/<str:test_param>/', main_views.test_url),
+    # path('test/<int:test_param>/', main_views.test_url),
     path('admin/', admin.site.urls),
-    path('test/', main_views.test)
 ]
 
 urlpatterns += [path('accounts/', include('django.contrib.auth.urls')),]
