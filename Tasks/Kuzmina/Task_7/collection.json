@@ -1,0 +1,14 @@
+[
+    {
+        "title": "Вечера",
+        "artist_or_director": "Борунов",
+        "year": "2001",
+        "genre": "комедия"
+    },
+    {
+        "title": "реальные пацаны",
+        "artist_or_director": "калян",
+        "year": "2013",
+        "genre": "реалити"
+    }
+]
